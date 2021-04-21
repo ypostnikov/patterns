@@ -20,7 +20,7 @@ class TextFormat implements InputFormat
      */
     public function __construct(InputFormat $inputFormat)
     {
-        $this->inputFormat = trim($inputFormat);
+        $this->inputFormat = $inputFormat;
     }
 
     /**
@@ -29,7 +29,7 @@ class TextFormat implements InputFormat
      */
     public function formatText(string $text): string
     {
-        return $this->inputFormat->formatText($text);
+        return trim($this->inputFormat->formatText($text));
     }
 
 }
